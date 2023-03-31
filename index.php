@@ -29,7 +29,7 @@
 
 				} else {
 					// Display the default avatar
-					echo '<h1>PLEASE SELECT AVATAR BEFORE STARTING</h1>';
+					echo '<h1>Please select avatar before starting game</h1>';
 				}
 			?>
 			<h2><a href="pairs.php" class="btn btn-primary custom-button">Click here to play</a></h2><br>
