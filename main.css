@@ -30,3 +30,33 @@ body {
     color: white;
 }
 
+.game-container {
+    background-color: #999;
+    box-shadow: 5px 5px 5px grey;
+    padding: 10px;
+    margin: 50px auto;
+    max-width: 800px;
+    color: black;
+}
+
+#timer-container {
+    display: none;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #999;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    line-height: 100px;
+  }

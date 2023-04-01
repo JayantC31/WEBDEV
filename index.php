@@ -13,8 +13,6 @@
 		<style>.custom-button { background-color: none; color: white; font-size: 30px; padding: 10px;}</style>
 		<?php if (isset($_COOKIE['username'])): ?>
 			<h1>Welcome to Pairs, <?php echo $_COOKIE['username'];?>!</h1><br>
-
-
 			<h2><a href="pairs.php" class="btn btn-primary custom-button">Click here to play</a></h2><br>
 			<h2><a href="leaderboard.php" class="btn btn-primary custom-button">Leaderboard</a></h2>
 		<?php else: ?>
