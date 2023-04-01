@@ -13,25 +13,8 @@
 		<style>.custom-button { background-color: none; color: white; font-size: 30px; padding: 10px;}</style>
 		<?php if (isset($_COOKIE['username'])): ?>
 			<h1>Welcome to Pairs, <?php echo $_COOKIE['username'];?>!</h1><br>
-			<?php
-				// Check if the avatar parts cookie exists
-				if (isset($_COOKIE['avatar_skin']) && isset($_COOKIE['avatar_mouth']) && isset($_COOKIE['avatar_eyes'])) {
-					// Get the selected avatar parts from the cookie
-					$skin = $_COOKIE['avatar_skin'];
-					$mouth = $_COOKIE['avatar_mouth'];
-					$eyes = $_COOKIE['avatar_eyes'];
-					
-					// Display the selected avatar parts
-					echo '<h1>Your selected avatar:</h1>';
-					echo '<img src="' . $skin . '" alt="skin" width="100" height="100">';
-					echo '<img src="' . $mouth . '" alt="mouth" width="100" height="100">';
-					echo '<img src="' . $eyes . '" alt="eyes" width="100" height="100">';
 
-				} else {
-					// Display the default avatar
-					echo '<h1>Please select avatar before starting game</h1>';
-				}
-			?>
+
 			<h2><a href="pairs.php" class="btn btn-primary custom-button">Click here to play</a></h2><br>
 			<h2><a href="leaderboard.php" class="btn btn-primary custom-button">Leaderboard</a></h2>
 		<?php else: ?>
