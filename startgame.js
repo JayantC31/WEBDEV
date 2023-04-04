@@ -5,7 +5,11 @@ function startGame() {
     // Show the timer container
     document.getElementById("timer-container").style.display = "block";
     
+    // Show the score container
+    document.getElementById("score-container").style.display = "block";
+
     let time = 0;
+    let scire = 0;
     let timerInterval = setInterval(updateTimer, 1000);
     
     function updateTimer() {
@@ -15,7 +19,11 @@ function startGame() {
       const timerDisplay = `${minutes}:${seconds}`;
       document.getElementById('timer').textContent = timerDisplay;
     }
-  
+    
+    function updateScore() {
+      score++;
+      document.getElementById('score').textContent = score;
+    }
     
 
     // Add game elements to the game container
