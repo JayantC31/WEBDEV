@@ -8,6 +8,8 @@ function startGame() {
     // Show the score container
     document.getElementById("score-container").style.display = "block";
 
+    document.getElementById("game-container").style.display = "block";
+
     let time = 0;
     let score = 0;
     let timerInterval = setInterval(updateTimer, 1000);
@@ -24,7 +26,16 @@ function startGame() {
       score++;
       document.getElementById('score').textContent = score;
     }
-    
+    function flipCard(index) {
+      var card = document.getElementById('card-' + index);
+      if (card.classList.contains('.card .back')) {
+          card.classList.remove('.card .back');
+          card.classList.add('.card .front');
+      } else {
+          card.classList.remove('.card .front');
+          card.classList.add('.card .back');
+      }
+  }
 
     // Add game elements to the game container
     // ...
