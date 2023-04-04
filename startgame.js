@@ -9,7 +9,7 @@ function startGame() {
     document.getElementById("score-container").style.display = "block";
 
     let time = 0;
-    let scire = 0;
+    let score = 0;
     let timerInterval = setInterval(updateTimer, 1000);
     
     function updateTimer() {
