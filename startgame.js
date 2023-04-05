@@ -13,7 +13,7 @@ function startGame() {
     let time = 0;
     let score = 0;
     let timerInterval = setInterval(updateTimer, 1000);
-    
+    let timerStop = setInterval(stopTimer, 60000);
     function updateTimer() {
       time++;
       const minutes = Math.floor(time / 60).toString().padStart(2, '0');
@@ -21,11 +21,19 @@ function startGame() {
       const timerDisplay = `${minutes}:${seconds}`;
       document.getElementById('timer').textContent = timerDisplay;
     }
-    
+    function stopTimer() {
+      clearInterval(timerInterval);
+    }
     function updateScore() {
       score++;
       document.getElementById('score').textContent = score;
     }
+
+    function updatemoves() {
+      moves++;
+      document.getElementById('moves').textContent = moves;
+    }
+
     function flipCard(index) {
       var card = document.getElementById('card-' + index);
       if (card.classList.contains('.card .back')) {

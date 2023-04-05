@@ -63,6 +63,10 @@ body {
     transition: transform 0.5s;
   }
 
+    .card:hover {
+        transform: scale(1.1);
+    }
+
 
   .card-front,
   .card-back {
@@ -81,6 +85,7 @@ body {
   
   .card-back {
       transform: rotateY(180deg);
+      background-color: antiquewhite;
   }
   
   .card-flip .card-front {
