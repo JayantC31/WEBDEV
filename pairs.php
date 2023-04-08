@@ -66,7 +66,7 @@
                         }
                         ?>
                     </div>
-                      
+                    
                 </div>
                 
             </div>
@@ -85,14 +85,14 @@
             Moves: <span id="moves">0</span><br>
         </div>  
         <div id="button-container" style="display: flex; justify-content: space-between;">
-    <div id="restart-game-container">
-        <button id="restart-btn">Restart game</button>
-    </div>
+            <div id="restart-game-container" style="display: none;">
+                <button id="restart-btn"onclick=restartGame()>Play again</button>
+            </div>
 
-    <div id="game-over-container">
-        <button id="leaderboard-btn" onclick="window.location.href = 'leaderboard.php'">Leaderboard</button>
-    </div>
-</div>
+            <div id="game-over-container"style="display: none;">
+                <button id="leaderboard-btn" onclick="window.location.href = 'leaderboard.php'">submit</button>
+            </div>
+        </div>
         
 
         

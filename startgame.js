@@ -91,7 +91,7 @@ function startGame() {
     });
 
 
-
+    
 
 
     function disableCards() {
@@ -101,8 +101,6 @@ function startGame() {
     checkGameCompletion();
     }
     
-    setInterval(myFunction, 1000);
-
 
     function unflipCards() {
     lockBoard = true;
@@ -133,4 +131,48 @@ function startGame() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
     }
+
+   
+    function restartGame() {
+        console.log("Restarting game...");
+        hasFlippedCard = false;
+        lockBoard = false;
+        firstCard = null;
+        secondCard = null;
+        moves = 0;
+        correctMoves = 0;
+        time = 0;
+
+        // Reset timer display
+        document.getElementById('timer').textContent = '00:00';
+        
+        // Reset score and moves display
+        document.getElementById('score').textContent = '0';
+        document.getElementById('moves').textContent = '0';
+
+        // Flip all cards back to their initial state
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.classList.remove('card-flip'));
+
+        
+        
+    }
+
+
+
+
+    // Get the restart button element
+    const restartButton = document.getElementById('restart-btn');
+    console.log(restartButton);
+    // Add an event listener for when the restart button is clicked
+    restartButton.addEventListener('click', restartGame);
+
+
+    
+
+
+
+
+
+
   }
