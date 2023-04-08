@@ -29,7 +29,7 @@
 				<a class="nav-link" href="pairs.php" name="memory">Play Pairs</a>
 			</li>
 			
-			<?php if (isset($_SESSION['username'])): ?>
+			<?php if (isset($_COOKIE['username'])): ?>
 				<li class="nav-item">
 					<a class="nav-link" href="leaderboard.php" name="leaderboard">Leaderboard</a>
 				</li>
