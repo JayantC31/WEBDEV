@@ -11,7 +11,9 @@ function startGame() {
     document.getElementById("game-container").style.display = "block";
 
     document.getElementById("game-over-container").style.display = "flex";
-    
+
+    document.getElementById("restart-game-container").style.display = "flex";
+        
     let time = 0;
 
     let timerInterval = setInterval(updateTimer, 1000); // Update the timer every second

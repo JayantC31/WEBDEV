@@ -77,16 +77,22 @@
     </div>
                   
         <div id="timer-container" style="display: none;">
-            Time: <span id="timer">00:00</span>
+            Time: <span id="timer">00:00</span><br>
             
         </div>
         <div id="score-container" style="display: none;">
             Score: <span id="score">0</span><br>
-            Moves: <span id="moves">0</span>
+            Moves: <span id="moves">0</span><br>
         </div>  
-        <div id="game-over-container" style="display: none;">
-            <button id="leaderboard-btn" onclick="window.location.href = 'leaderboard.php'">Leaderboard</button>
-        </div>
+        <div id="button-container" style="display: flex; justify-content: space-between;">
+    <div id="restart-game-container">
+        <button id="restart-btn">Restart game</button>
+    </div>
+
+    <div id="game-over-container">
+        <button id="leaderboard-btn" onclick="window.location.href = 'leaderboard.php'">Leaderboard</button>
+    </div>
+</div>
         
 
         
