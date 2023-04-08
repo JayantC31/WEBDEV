@@ -10,10 +10,12 @@ function startGame() {
 
     document.getElementById("game-container").style.display = "block";
 
+    document.getElementById("game-over-container").style.display = "flex";
+    
     let time = 0;
-    let score = 0;
-    let timerInterval = setInterval(updateTimer, 1000);
-    let timerStop = setInterval(stopTimer, 60000);
+
+    let timerInterval = setInterval(updateTimer, 1000); // Update the timer every second
+    let timerStop = setInterval(stopTimer, 120000); // Stop the timer after 2 minutes
     function updateTimer() {
       time++;
       const minutes = Math.floor(time / 60).toString().padStart(2, '0');
@@ -23,28 +25,110 @@ function startGame() {
     }
     function stopTimer() {
       clearInterval(timerInterval);
+      document.getElementById('timer').textContent = timerDisplay;
     }
-    function updateScore() {
-      score++;
-      document.getElementById('score').textContent = score;
+    
+  
+    
+    const cards = document.querySelectorAll('.card');
+    let hasFlippedCard = false;
+    let lockBoard = false;
+    let firstCard = null;
+    let secondCard = null;
+    let moves = 0;
+    let correctMoves = 0;
+    let timer = null;
+                
+    cards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Check if both cards have already been matched
+        if (firstCard && secondCard) {
+        return;
+        }
+        
+        card.classList.toggle('card-flip');
+        moves++;
+        document.getElementById("moves").innerHTML = moves;
+
+
+
+        if (!firstCard) {
+        // This is the first card that has been clicked
+        firstCard = card;
+        } else if (!secondCard) {
+        // This is the second card that has been clicked
+        secondCard = card;
+
+        // Compare the contents of the two cards
+        if (firstCard.querySelector('.card-back').innerHTML === secondCard.querySelector('.card-back').innerHTML) {
+            // The cards match, keep them flipped over
+            correctMoves++;
+            document.getElementById("score").innerHTML = correctMoves;
+            firstCard = null;
+            secondCard = null;
+            if (correctMoves == 5) {
+                checkGameCompletion();}
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            
+            
+        } else {
+            // The cards don't match, flip them back over
+            setTimeout(() => {
+            firstCard.classList.toggle('card-flip');
+            secondCard.classList.toggle('card-flip');
+            firstCard = null;
+            secondCard = null;
+            }, 1000);
+        }
+        }
+    
+
+    
+    });
+    });
+
+
+
+
+
+    function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    resetBoard();
+    checkGameCompletion();
+    }
+    
+    setInterval(myFunction, 1000);
+
+
+    function unflipCards() {
+    lockBoard = true;
+
+    setTimeout(() => {
+        firstCard.classList.remove('selected');
+        secondCard.classList.remove('selected');
+
+        resetBoard();
+    }, 1000);
     }
 
-    function updatemoves() {
-      moves++;
-      document.getElementById('moves').textContent = moves;
+    
+
+    function checkGameCompletion() {
+        if (correctMoves == 5) {
+            stopTimer();
+            // Save time, score, and moves as cookies
+            document.cookie = "time=" + time + ";";
+            document.cookie = "score=" + correctMoves + ";";
+            document.cookie = "moves=" + moves + ";";
+            
+            
+
+        }}
+
+    function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
     }
-
-    function flipCard(index) {
-      var card = document.getElementById('card-' + index);
-      if (card.classList.contains('.card .back')) {
-          card.classList.remove('.card .back');
-          card.classList.add('.card .front');
-      } else {
-          card.classList.remove('.card .front');
-          card.classList.add('.card .back');
-      }
-  }
-
-    // Add game elements to the game container
-    // ...
   }
