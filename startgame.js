@@ -132,11 +132,6 @@ function startGame() {
     function checkGameCompletion() {
         if (correctMoves == 5) {
             stopTimer();
-            // Save time, score, and moves as cookies
-            document.cookie = "time=" + time + ";";
-            document.cookie = "score=" + correctMoves + ";";
-            document.cookie = "moves=" + moves + ";";
-            
         }}
 
     function resetBoard() {
@@ -175,6 +170,9 @@ function startGame() {
         // check if game is done
         if (correctMoves == 5) {
             // if game is done, user is sent to leaderboard.php
+            document.cookie = `time=${time}; expires=${new Date(Date.now() + 86400e3).toUTCString()}`;
+            document.cookie = `score=${score}; expires=${new Date(Date.now() + 86400e3).toUTCString()}`;
+            document.cookie = `moves=${moves}; expires=${new Date(Date.now() + 86400e3).toUTCString()}`;
             window.location.href = 'leaderboard.php';
             
         }}
