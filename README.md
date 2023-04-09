@@ -33,6 +33,7 @@ Pairs.php
     - Animations when hovering over/flipping card
 
 Leaderboard.php
+
     - Formatted table
     - Contains best score 
     - Works with multiple users in session
