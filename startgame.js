@@ -40,6 +40,7 @@ function startGame() {
     let moves = 0;
     let correctMoves = 0;
     let timer = null;
+    let score = 0;
                 
     cards.forEach(card => {
     card.addEventListener('click', () => {
@@ -65,7 +66,20 @@ function startGame() {
         if (firstCard.querySelector('.card-back').innerHTML === secondCard.querySelector('.card-back').innerHTML) {
             // The cards match, keep them flipped over
             correctMoves++;
-            document.getElementById("score").innerHTML = correctMoves;
+            if (time < 10) {
+                score += Math.round(20 + moves/correctMoves);
+            } else if (time < 15) {
+                score += Math.round(18 + moves/correctMoves);    
+            } else if (time < 30) {
+                score += Math.round(15 + moves/correctMoves);
+            } else if (time < 45) {
+                score += Math.round(10 + moves/correctMoves);
+            } else if (time < 75) {
+                score += Math.round(5 + moves/correctMoves);
+            } else if (time < 120) {
+                score += Math.round(3 + moves/correctMoves);
+            }
+            document.getElementById("score").innerHTML = (score);
             firstCard = null;
             secondCard = null;
             if (correctMoves == 5) {
@@ -112,7 +126,7 @@ function startGame() {
         resetBoard();
     }, 1000);
     }
-
+    
     
 
     function checkGameCompletion() {
@@ -123,8 +137,6 @@ function startGame() {
             document.cookie = "score=" + correctMoves + ";";
             document.cookie = "moves=" + moves + ";";
             
-            
-
         }}
 
     function resetBoard() {
@@ -142,7 +154,7 @@ function startGame() {
         moves = 0;
         correctMoves = 0;
         time = 0;
-
+        
         // Reset timer display
         document.getElementById('timer').textContent = '00:00';
         
@@ -153,12 +165,20 @@ function startGame() {
         // Flip all cards back to their initial state
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => card.classList.remove('card-flip'));
-
         
+        // Reload page to reload all emoji cards and start a new game
+        location.reload();
         
     }
-
-
+    
+    function CheckGameDone(){
+        // check if game is done
+        if (correctMoves == 5) {
+            // if game is done, user is sent to leaderboard.php
+            window.location.href = 'leaderboard.php';
+            
+        }}
+            
 
 
     // Get the restart button element
@@ -166,7 +186,10 @@ function startGame() {
     console.log(restartButton);
     // Add an event listener for when the restart button is clicked
     restartButton.addEventListener('click', restartGame);
-
+    
+    const leaderboardButton = document.getElementById('leaderboard-btn');
+    console.log(leaderboardButton);
+    leaderboardButton.addEventListener('click', CheckGameDone);
 
     
 

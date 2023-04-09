@@ -12,7 +12,7 @@
 	<?php include 'navbar.php'; ?>
     <div class="game-container" style="text-align:center">
         <button id="start-game-btn" onclick="startGame()">Start Game</button>
-        <div id="game-container" style="display: none;">
+        <div id="game-container"  style="display: none;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -90,7 +90,7 @@
             </div>
 
             <div id="game-over-container"style="display: none;">
-                <button id="leaderboard-btn" onclick="window.location.href = 'leaderboard.php'">submit</button>
+                <button id="leaderboard-btn" onclick=CheckGameDone()>submit</button>
             </div>
         </div>
         
