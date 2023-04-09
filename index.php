@@ -14,7 +14,8 @@
 		<?php if (isset($_COOKIE['username'])): ?>
 			<h1>Welcome to Pairs, <?php echo $_COOKIE['username'];?>!</h1><br>
 			<h2><a href="pairs.php" class="btn btn-primary custom-button">Click here to play</a></h2><br>
-			<h2><a href="leaderboard.php" class="btn btn-primary custom-button">Leaderboard</a></h2>
+			<h2><a href="leaderboard.php" class="btn btn-primary custom-button">Leaderboard</a></h2><br>
+			<h2><a href="registration.php" class="btn btn-primary custom-button">Register different user</a></h2>
 		<?php else: ?>
 			<h2>You're not using a registered session?<br><br><a href="registration.php" class="btn btn-primary custom-button">Register now</a></h2>
 		<?php endif; ?>
