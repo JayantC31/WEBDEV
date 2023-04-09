@@ -1,5 +1,6 @@
 # Web development ECM1417 - Jayant Chawla
 All files
+
     - Contain Navbar
     - Includes links to Home/Play/Leaderboard/Register
     - Emoji shown in middle, if selected
@@ -8,15 +9,18 @@ All files
     - Includes multiple sounds
 
 Index.php
+
     - Display welcome message
     - Button links to play/Leaderboard/Change User
     - Button link to register if not registered
 
 Registration.php
+
     - Username textbox, saves as cookie
     - *Complex* - select, configure emoji avatar based on given emoji assets
 
 Pairs.php
+
     - Start game button
     - *Medium* - 10 cards, random emojis
     - Emojis created from combining features
