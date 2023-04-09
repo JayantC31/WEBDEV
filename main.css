@@ -119,8 +119,18 @@ body {
   #leaderboard td {
     padding: 5px;
     text-align: center;
+    font-size: 40px;
   }
   
+  td{
+    font-size: 25px;
+  }
+  th {
+    background-color: blue;
+    font-size: 25px;
+    
+}
+
   #leaderboard tr:nth-child(odd) {
     background-color: #f2f2f2;
   }

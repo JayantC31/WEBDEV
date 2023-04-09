@@ -70,7 +70,7 @@
 
             echo "<table style='border-spacing: 2px; margin: 0 auto;'>";
 
-            echo "<tr><th style='background-color: blue;'>Username</th><th style='background-color: blue;'>Score</th></tr>";
+            echo "<tr><th style='background-color: blue;padding: 10px;'>Username</th><th style='background-color: blue;padding: 10px;'>Score</th></tr>";
             
             foreach ($_SESSION['leaderboard'] as $data) {
                 $username = $data['username'];
