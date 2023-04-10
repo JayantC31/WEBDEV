@@ -30,6 +30,11 @@ function startGame() {
       document.getElementById('timer').textContent = timerDisplay;
     }
     
+    // Add background music to the game
+    const audio = new Audio('music.mp3');
+    audio.volume = 1; // Keep volume at 100%
+    audio.loop = true; // Loop the audio
+    audio.play(); // Start playing the audio
   
     
     const cards = document.querySelectorAll('.card');
