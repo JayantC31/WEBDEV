@@ -29,7 +29,7 @@
 						</div>
 						<!-- Save as emoji cookie based on the 3 features -->
 						<div class="form-group">
-							<h1>Select your avatar</h1>
+							<h1>Select your emoji</h1>
 							<fieldset>
 								<legend>Skin</legend>
 								<?php
