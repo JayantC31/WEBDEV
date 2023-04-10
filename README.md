@@ -3,10 +3,9 @@ All files
 
     - Contain Navbar
     - Includes links to Home/Play/Leaderboard/Register
-    - Emoji shown in middle, if selected
+    - Emoji shown in middle of navbar, if selected
     
-    - Use Bootstrap, jquery
-    - Includes multiple sounds
+    - Uses Bootstrap, jquery
 
 Index.php
 
