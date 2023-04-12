@@ -1,4 +1,13 @@
-# Web development ECM1417 - Jayant Chawla
+# Web development ECM1417 - Jayant Chawla(720018152)
+# Candiate number: 241275
+# Jayant Chawla VM number: 60787
+
+To access VM: ssh -p 60787 ecm1417@ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com
+
+Via ssh: ssh -p 60787 ecm1417@ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com
+
+To access game on web: http://ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com:60787/index.php
+
 All files
 
     - Contain Navbar
